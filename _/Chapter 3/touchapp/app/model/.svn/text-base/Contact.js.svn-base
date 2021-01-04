@@ -1,0 +1,19 @@
+Ext.define('verianMobile.model.Contact', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: [
+            {
+                name: 'firstName'
+            },
+            {
+                name: 'lastName'
+            },
+            {
+                name: 'city'
+            },
+            {
+                name: 'state'
+            }
+        ]
+    }
+});

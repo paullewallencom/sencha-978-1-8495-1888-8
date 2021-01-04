@@ -1,0 +1,20 @@
+Ext.define('verianMobile.store.ApprovalItems', {
+    extend: 'Ext.data.Store',
+    requires: [
+        'verianMobile.model.ApprovalItem'
+    ],
+
+    config: {
+        autoLoad: true,
+        model: 'verianMobile.model.ApprovalItem',
+        storeId: 'ApprovalItems',
+        proxy: {
+            type: 'ajax',
+            url: 'app/data/approvals.json',
+            reader: {
+                type: 'json',
+                rootProperty: 'approvals'
+            }
+        }
+    }
+});

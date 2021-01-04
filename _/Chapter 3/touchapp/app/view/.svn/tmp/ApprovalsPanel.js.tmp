@@ -1,0 +1,84 @@
+Ext.define('verianMobile.view.ApprovalsPanel', {
+    extend: 'Ext.form.Panel',
+    alias: 'widget.approvalspanel',
+    config: {
+        ui: 'dark',
+        layout: {
+            type: 'fit'
+        },
+        items: [
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Approvals',
+                items: [
+                    {
+                        xtype: 'button',
+                        ui: 'back',
+                        text: 'Back',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('approvalspanel');
+                        	ct.fireEvent('backtap', ct, btn, e, eOpts);
+                        }
+                    },
+                    {
+                        xtype: 'button',
+                        text: 'Filter',
+                        align: 'right',
+<<<<<<< .mine
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('approvalspanel');
+                        	ct.fireEvent('filtertap', ct, btn, e, eOpts);
+                        }
+                        
+=======
+                        scope: this.self,
+                        handler: function(cmp, e, eOpts) {
+                            	cmp.getParent().getParent().getParent().fireEvent('tap1', cmp.getParent().getParent(), cmp, e, eOpts);
+                            }
+>>>>>>> .r34
+                    }
+                ]
+            },
+            {
+                xtype: 'list',
+                id : 'listId',
+                height: '100%',
+                ui: 'round',
+                width: '100%',
+                itemTpl: [
+					'<div class="item">',
+						'<div class="icon" style="background:url({icon}) no-repeat 0 0;"></div>',
+						'<div class="meta"></div><div class="title ">{docNbr	}</div>',
+						'<div class="class">{docAmt},{firstName}</div>',
+						'<div class="class">{docText}</div>',
+					'</div>'
+                ],
+                store: 'ApprovalItems',
+<<<<<<< .mine
+                onItemDisclosure: true,
+                listeners: {
+                	disclose: function(view, index, t, model, e, eOpts) {
+                    	var ct = view.up('approvalspanel');
+                    	ct.fireEvent('showdetail', ct, view, index, t, model, e, eOpts);
+                    }
+                }
+            }
+        ]
+=======
+                onItemDisclosure: true,
+                listeners : {
+
+                	select : function(cmp, e, eOpts){
+                		cmp.getParent().fireEvent('tap2', cmp.getParent(), cmp, e, eOpts);
+                			
+                			}
+                	
+                }      
+            },
+            
+                    ]
+>>>>>>> .r34
+    }
+
+});

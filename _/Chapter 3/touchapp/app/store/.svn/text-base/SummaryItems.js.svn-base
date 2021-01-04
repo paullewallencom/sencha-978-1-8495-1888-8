@@ -1,0 +1,20 @@
+Ext.define('verianMobile.store.SummaryItems', {
+    extend: 'Ext.data.Store',
+    requires: [
+        'verianMobile.model.SummaryItem'
+    ],
+
+    config: {
+        autoLoad: true,
+        model: 'verianMobile.model.SummaryItem',
+        storeId: 'SummaryItems',
+        proxy: {
+            type: 'ajax',
+            url: 'app/data/itemsummary.json',
+            reader: {
+                type: 'json',
+                rootProperty: 'summaryitems'
+            }
+        }
+    }
+});

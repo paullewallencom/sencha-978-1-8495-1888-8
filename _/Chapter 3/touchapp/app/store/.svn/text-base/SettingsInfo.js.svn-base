@@ -1,0 +1,20 @@
+Ext.define('verianMobile.store.SettingsInfo', {
+    extend: 'Ext.data.Store',
+    requires: [
+        'verianMobile.model.SettingsInfo'
+    ],
+
+    config: {
+        autoLoad: true,
+        model: 'verianMobile.model.SettingsInfo',
+        storeId: 'SettingsInfo',
+        proxy: {
+            type: 'ajax',
+            url: 'app/data/settings.json',
+            reader: {
+                type: 'json',
+                rootProperty: 'settings'
+            }
+        }
+    }
+});

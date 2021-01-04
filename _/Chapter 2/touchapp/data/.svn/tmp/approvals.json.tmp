@@ -1,0 +1,34 @@
+{
+    "total": 3,
+    "approvals": [
+        {
+            "icon": "data:image/gif;base64,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",
+            "docType": "requisition",
+            "docNbr" : "Req# 1391",
+            "docAmt" : "10000.00",
+            "firstName": "Laura",
+            "lastName": "Beahan",
+            "docText": "Multiple vendors"
+        }, {
+<<<<<<< .mine
+            "icon": "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAADOklEQVRoBe2ay4oTURCGjY73C4KCW3HjxhcQXPgGbgWRQV2I7ryAF0QURRFc+QQu3Ai+gKAPoCtfQcGFiogDIl5m4veTtNOjk/Q5lb87nUkK/tBJzqmqv6rOSfXpdLrd7jqXdDqdOXQdBvvAkktvop4fjHsNn09Dx4uwAxjpgDPgK1AUm8ZHbB6t4rKeQS6ZR9EDsMulsA49FsKU8hWcewT21OGkU6fWXFggqjIW2WtgZ1hRgxPDhOG6AT9Pgeugiuxnxmgzce2QqswDYCPIk6pFvtr3WFBmz4EvIGVzureanuhn2FSA3/5ju9ZN6xbGHoLdIEXmqIj8bAzWrICHJHvTwvEbWLoItoUsjnlS8hrur9mb+HsJbB+z32HzSYQhq3HaoC6DicxsEaHKkoas1stpcGfSyYp0SoaL39lWd1AikyKVGUbJMbAmyCogKYQ1bs3IjPCaSeUAIk1luCk7A2guf5yySy+P7l2pdz4LXoLfvY8qXxcyxlYqG2VAhLDsfQDvaP5TCY/io3VutNSi86zOR5RNrOMRspoTLekV9vo3Fs7gLbFcFlcYMb2xEMYX3RufAJsMfv1ExzNw3qDrPxUuwlvRrMMAx03+L/TUdkfmKkPXWVWREbe+Qq+tl3ZVSuGYW1+h17Npoe0quAvCZ01/PeodCn4rvbdeWiLJjqpjWKH14lrDrSdaODh1hC0lTeOxnwjuBTlrWMEuevLGHq1aCOP4BXAS5DYej5mjY189221EXIRFdAfIbTw2N8KyZGTq1rCLcLRSovNKOcu7dBnUI9P7IGfTkqc6CdHNQmNiIUzjoWe/w/9M0hil4YZcJT3cSou+nTrClpKm8ThCEg+COgKoW8X34DlLZ+QGxUIYZ46DeZDbeDClUnQy+qKP1hDWH1zUROQ2HkypFOl2JcZWgnUQLUfCpt8VuVd4p3Mtl74yWa3hN8By7ONy8AkOPS17ab5eZMOyPOWwEMaZ7xAUWi91/Iy0mvSMcKvTY3BulmFDEFutYpbhxPSM3NMm2rEPi/4OH8KTBe6SxkV8C/aFbIkQ1jHObWBp9bI97k2Q7VB/HSEsk9F5PXfH+DrbtMYY/EZMT12G/wDjXFr6OJQiMgAAAABJRU5ErkJggg==",
+=======
+        	"iconCls": "expense",
+>>>>>>> .r34
+            "docType": "expense",
+            "docNbr" : "Exp. Report# 1392",
+            "docAmt" : "1000.00",
+            "firstName": "Laura",
+            "lastName": "Beahan",
+            "docText": "Trip to Atlanta"
+        }, {
+            "icon": "app/touch/resources/themes/images/default/pictos/dollar.png",
+            "docType": "invoice",
+            "docNbr" : "Invoice# 1393",
+            "docAmt" : "1500.00",
+            "firstName": "Laura",
+            "lastName": "Beahan",
+            "docText": "Boise, PO"
+        }
+    ]
+}

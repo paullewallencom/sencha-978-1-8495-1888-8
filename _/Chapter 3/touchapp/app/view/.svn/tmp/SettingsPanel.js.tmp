@@ -1,0 +1,204 @@
+Ext.define('verianMobile.view.SettingsPanel', {
+    extend: 'Ext.Container',
+    alias: 'widget.settingspanel',
+    
+    config: {
+        ui: 'light',
+        layout: {
+            type: 'card'
+        },
+        items: [{
+            xtype: 'titlebar',
+            docked: 'top',
+            title: 'Settings',
+            items: []
+        },{
+        	layout: {
+                type: 'vbox'
+            },
+            items: [
+            {
+                xtype: 'list',
+                height: 175,
+                ui: 'round',
+                itemTpl: [
+                    '<div>{name}</div>'
+                ],
+                store: 'SettingsInfo',
+<<<<<<< .mine
+                onItemDisclosure: true,
+                displayField: 'description',
+                listeners: {
+                	disclose: function(list, model, t, idx, e, eOpts) {
+                		var pnl = list.up('settingspanel');
+                		var titleBar = pnl.down('titlebar');
+                		var backBtn = titleBar.down('button[ui=back]');
+                		if (Ext.isEmpty(backBtn)) {
+                			titleBar.add({
+                                xtype: 'button',
+                                ui: 'back',
+                                text: 'Back',
+                                handler: function(btn, e, eOpts) {
+                                	var ct = btn.up('settingspanel');
+                                	var item = ct.getActiveItem();
+
+                                	var cnt = -1;
+                                	var tmpItems = ct.items.items;
+                                	for(var i=0; i<tmpItems.length; i++) {
+                                		var tmp = tmpItems[i];
+                                		if (tmp.getId() === item.getId()) {
+                                			cnt = i;
+                                			break;
+                                		}
+                                			
+                                	}
+                                	
+                                	ct.setActiveItem(cnt-2);
+                                	ct.removeAt(cnt);
+                                	
+                                	//remove the Back button when we are back to the main settings panel
+                                	//TODO: review this...remove does not seem to be working
+                                	if (cnt === 2) {
+                                		titleBar.remove(backBtn, true);
+//                                		backBtn.destroy();
+                                	}
+                                }
+                            });
+                		}
+                		
+                		var store = Ext.create('Ext.data.Store', {
+                			   model: 'verianMobile.model.SettingsInfo',
+                			   data: model.get("items")
+                			   });
+                		
+                		var list = Ext.create('verianMobile.view.component.List', {
+                			height: 200,
+                            ui: 'round',
+                            store: store,
+                            onItemDisclosure: true,
+                            itemTpl: [
+                                      '<div>{name}</div>'
+                            ],
+                            listeners: {
+                            	disclose: function(list, model, t, idx, e, eOpts) {
+                            		var pnl = Ext.create('Ext.Container', {
+                            			ui: 'dark',
+                            			margin: 10,
+                            	        layout: {
+                            	            type: 'vbox'
+                            	        },
+                                        items: [{
+											layout: {
+											    type: 'hbox'
+											},
+											items: [{
+								                xtype: 'radiofield',
+								                width: 54,
+								                labelWidth: 0
+								            },
+								            {
+								                xtype: 'checkboxfield',
+								                width: '100%',
+								                label: 'Users',
+								                labelAlign: 'right',
+								                labelWidth: '90%',
+								                checked: true
+								            }]
+                                        }, {
+											layout: {
+											    type: 'hbox'
+											},
+											items: [{
+								                xtype: 'radiofield',
+								                width: 54,
+								                labelWidth: 0
+								            },
+								            {
+								                xtype: 'checkboxfield',
+								                label: 'Total',
+								                labelAlign: 'right',
+								                width: '100%',
+								                labelWidth: '90%',
+								                checked: true
+								            }]
+                                        }, {
+											layout: {
+											    type: 'hbox'
+											},
+											items: [{
+								                xtype: 'radiofield',
+								                width: 54,
+								                labelWidth: 0
+								            },
+								            {
+								                xtype: 'checkboxfield',
+								                label: 'Location',
+								                labelAlign: 'right',
+								                width: '100%',
+								                labelWidth: '90%',
+								                checked: true
+								            }]
+                                        }, {
+											layout: {
+											    type: 'hbox'
+											},
+											items: [{
+								                xtype: 'radiofield',
+								                width: 54,
+								                labelWidth: 0
+								            },
+								            {
+								                xtype: 'checkboxfield',
+								                label: 'Date',
+								                labelAlign: 'right',
+								                width: '100%',
+								                labelWidth: '90%',
+								                checked: true
+								            }]
+                                        }, {
+                                            xtype: 'button',
+                                            margin: 10,
+                                            ui: 'confirm-round',
+                                            text: 'Set As Default',
+                                            handler: function(btn, e, eOpts) {
+                                            	var ct = btn.up('settingspanel');
+                                            	ct.fireEvent('setdefault', ct, btn, e, eOpts);
+                                            }
+                                        }]
+                            		});
+                            		
+                            		var parentPnl = list.up('settingspanel');
+                            		parentPnl.add(pnl);
+                            		parentPnl.setActiveItem(pnl);
+                            		
+                                }
+                            }
+                		});
+                		
+                		pnl.add(list);
+                		pnl.setActiveItem(list);
+                	} 
+                }
+=======
+                onItemDisclosure: true,
+                listeners : {
+
+                	select : function(cmp, e, eOpts){
+                		cmp.getParent().fireEvent('tap5', cmp.getParent(), cmp, e, eOpts);
+                			
+                			}
+                	
+                }
+>>>>>>> .r34
+            },
+            {
+                xtype: 'togglefield',
+                label: 'Remember Password',
+                labelWidth: '70%'
+            }]
+        	}
+            
+        ]
+    }
+
+});

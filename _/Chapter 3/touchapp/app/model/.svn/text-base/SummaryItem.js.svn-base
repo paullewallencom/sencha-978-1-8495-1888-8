@@ -1,0 +1,13 @@
+Ext.define('verianMobile.model.SummaryItem', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: [
+            {
+                name: 'field'
+            },
+            {
+                name: 'text'
+            }
+        ]
+    }
+});

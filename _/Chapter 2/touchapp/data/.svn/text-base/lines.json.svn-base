@@ -1,0 +1,35 @@
+{
+    "docNbr" : "Req# 1391",
+    "total" : "3",
+    "lines" : [{
+    	"item": "Basket Ball",
+    	"unitPrice": "2.99",
+    	"uom": "Each",
+    	"qty": "10",
+    	"location": "Saini Sports",
+    	"partThumb": "app/touch/resources/themes/images/default/pictos/basketball_ball.png",
+    	"glCodes": "200.100.120.10,50%",
+    	"approved": "on"
+    }, {
+    	"item": "Football",
+    	"unitPrice": "2.99",
+    	"uom": "Each",
+    	"qty": "10",
+    	"location": "Saini Sports",
+    	"partThumb": "app/touch/resources/themes/images/default/pictos/football_ball.png",
+    	"glCodes": "200.100.120.10,50%",
+    	"approved": "on"
+    }, {
+    	"item": "Soccer Ball",
+    	"unitPrice": "150",
+    	"uom": "Each",
+    	"qty": "1",
+    	"location": "Saini Sports",
+    	"partThumb": "app/touch/resources/themes/images/default/pictos/soccer_ball.png",
+    	"glCodes": "200.100.120.10,50%",
+    	"approved": "off"
+    }],
+    "docAmt": "1000.00",
+    "approvers": "2 of 3",
+    "attachments": "3 attachments"
+}

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/verian/!svn/ver/35/trunk/VerianMobile/WebContent/app/view
+END
+ApprovalsPanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/verian/!svn/ver/38/trunk/VerianMobile/WebContent/app/view/ApprovalsPanel.js
+END
+SortOptionsPanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/verian/!svn/ver/28/trunk/VerianMobile/WebContent/app/view/SortOptionsPanel.js
+END
+SettingsPanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/verian/!svn/ver/39/trunk/VerianMobile/WebContent/app/view/SettingsPanel.js
+END
+NavigationPanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/verian/!svn/ver/39/trunk/VerianMobile/WebContent/app/view/NavigationPanel.js
+END
+ItemDetailPanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/verian/!svn/ver/39/trunk/VerianMobile/WebContent/app/view/ItemDetailPanel.js
+END
+LoginForm.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/verian/!svn/ver/39/trunk/VerianMobile/WebContent/app/view/LoginForm.js
+END
+FilterPanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/verian/!svn/ver/35/trunk/VerianMobile/WebContent/app/view/FilterPanel.js
+END
+ExpensePanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/verian/!svn/ver/39/trunk/VerianMobile/WebContent/app/view/ExpensePanel.js
+END
+ItemLineDetailPanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/verian/!svn/ver/39/trunk/VerianMobile/WebContent/app/view/ItemLineDetailPanel.js
+END

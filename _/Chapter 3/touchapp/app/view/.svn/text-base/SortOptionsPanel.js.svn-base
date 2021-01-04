@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+Ext.define('verianMobile.view.SortOptionsPanel', {
+    extend: 'Ext.form.Panel',
+    alias: 'widget.sortoptions',
+
+    config: {
+        ui: 'light',
+        layout: {
+            type: 'vbox'
+        },
+        items: [
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Requisition Sort Panel',
+                items: [
+                    {
+                        xtype: 'button',
+                        ui: 'back',
+                        text: 'Back'
+                    }
+                ]
+            },
+            {
+                xtype: 'fieldset',
+                items: [
+                    {
+                        xtype: 'checkboxfield',
+                        label: 'Requisitions',
+                        labelAlign: 'right',
+                        labelWidth: '80%',
+                        checked: true
+                    },
+                    {
+                        xtype: 'checkboxfield',
+                        label: 'Expense Reports',
+                        labelAlign: 'right',
+                        labelWidth: '80%',
+                        checked: true
+                    },
+                    {
+                        xtype: 'checkboxfield',
+                        label: 'Invoices',
+                        labelAlign: 'right',
+                        labelWidth: '80%',
+                        checked: true
+                    }
+                ]
+            }
+        ]
+    }
+
+});

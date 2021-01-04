@@ -1,0 +1,28 @@
+Ext.define('verianMobile.model.ApprovalItem', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: [
+            {
+            	name: 'docNbr'
+            },
+            {
+                name: 'firstName'
+            },
+            {
+                name: 'lastName'
+            },
+            {
+                name: 'docAmt'
+            },
+            {
+                name: 'docType'
+            },
+            {
+                name: 'docText'
+            },
+            {
+                name: 'icon'
+            }
+        ]
+    }
+});

@@ -1,0 +1,66 @@
+Ext.define('verianMobile.view.ApprovalsPanel', {
+    extend: 'Ext.Container',
+    alias: 'widget.approvalspanel',
+    config: {
+        ui: 'dark',
+        layout: {
+            type: 'fit'
+        },
+        items: [
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Approvals',
+                items: [
+                    {
+                        xtype: 'button',
+                        ui: 'back',
+                        text: 'Back',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('approvalspanel');
+                        	ct.fireEvent('backtap', ct, btn, e, eOpts);
+                        }
+                    },
+                    {
+                        xtype: 'button',
+                        text: 'Filter',
+                        align: 'right',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('approvalspanel');
+                        	ct.fireEvent('filtertap', ct, btn, e, eOpts);
+                        }
+                        
+                    }
+                ]
+            },
+            {
+                xtype: 'list',
+                height: '100%',
+                ui: 'round',
+//                width: '100%',
+                itemTpl: [
+					'<div class="item">',
+						'<div class="icon" style="background:url({icon}) no-repeat 0 0;"></div>',
+						'<div class="meta"></div><div class="title ">{docNbr	}</div>',
+						'<div class="class">{docAmt},{firstName}</div>',
+						'<div class="class">{docText}</div>',
+					'</div>'
+                ],
+                store: 'ApprovalItems',
+                onItemDisclosure: true,
+                listeners: {
+                	disclose: function(view, model, t, index, e, eOpts) {
+                		if (model.get("docType") != 'requisition') {
+                			Ext.Msg.alert('INFO', 'No data available!');
+                			return;
+                		}
+                		
+                    	var ct = view.up('approvalspanel');
+                    	ct.fireEvent('showdetail', ct, view, index, t, model, e, eOpts);
+                    }
+                }
+            }
+        ]
+    }
+
+});

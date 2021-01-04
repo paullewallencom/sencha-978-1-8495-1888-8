@@ -1,0 +1,31 @@
+Ext.define('verianMobile.model.LineItem', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: [
+            {
+            	name: 'item'
+            },
+            {
+                name: 'unitPrice'
+            },
+            {
+                name: 'uom'
+            },
+            {
+                name: 'qty'
+            },
+            {
+                name: 'location'
+            },
+            {
+                name: 'partThumb'
+            },
+            {
+                name: 'glCodes'
+            },
+            {
+                name: 'approved'
+            }
+        ]
+    }
+});

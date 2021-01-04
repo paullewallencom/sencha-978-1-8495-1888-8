@@ -1,0 +1,54 @@
+{
+    	"description": "Items",
+    	"items" : [
+        {
+            "itemCount": "10",
+            "description": "Approvals",
+            "items": [{
+            	"itemCount": "3",
+            	"description": "Inventory",
+            	"items": [{
+	            	"itemCount": "3",
+	            	"description": "Orders in Backorder",
+	            	"leaf": "true"
+            	}]
+            }, {
+            	"itemCount": "2",
+            	"description": "Receiving",
+            	"items": [{
+	            	"itemCount": "1",
+	            	"description": "Own Requests to Receive",
+	            	"leaf": "true"
+            	}, {
+	            	"itemCount": "1",
+	            	"description": "Requests to Receive",
+	            	"leaf": "true"
+            	}]
+            }, {
+            	"itemCount": "5",
+            	"description": "Purchasing",
+            	"items": [{
+	            	"itemCount": "4",
+	            	"description": "Items Ready for Purchasing",
+	            	"leaf": "true"
+            	}, {
+	            	"itemCount": "1",
+	            	"description": "POs Ready to be Placed",
+	            	"leaf": "true"
+            	}]
+            }]
+        },
+        {
+            "itemCount": "3",
+            "description": "Messages",
+        	"items": [{
+            	"itemCount": "2",
+            	"description": "General broadcast messages",
+            	"leaf": "true"
+        	}, {
+            	"itemCount": "1",
+            	"description": "PO pending approval message",
+            	"leaf": "true"
+        	}]
+        }]
+}

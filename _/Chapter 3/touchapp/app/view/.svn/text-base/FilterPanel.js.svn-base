@@ -1,0 +1,56 @@
+Ext.define('verianMobile.view.FilterPanel', {
+    extend: 'Ext.form.Panel',
+    alias: 'widget.filterpanel',
+
+    config: {
+        ui: 'light',
+        layout: {
+            type: 'vbox'
+        },
+        items: [
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Filter',
+                items: [
+                    {
+                        xtype: 'button',
+                        ui: 'back',
+                        text: 'Back',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('filterpanel');
+                        	ct.fireEvent('backtap', ct, btn, e, eOpts);
+                        }
+                    }
+                ]
+            },
+            {
+                xtype: 'fieldset',
+                items: [
+                    {
+                        xtype: 'checkboxfield',
+                        label: 'Requisitions',
+                        labelAlign: 'right',
+                        labelWidth: '80%',
+                        checked: true
+                    },
+                    {
+                        xtype: 'checkboxfield',
+                        label: 'Expense Reports',
+                        labelAlign: 'right',
+                        labelWidth: '80%',
+                        checked: true
+                    },
+                    {
+                        xtype: 'checkboxfield',
+                        label: 'Invoices',
+                        labelAlign: 'right',
+                        labelWidth: '80%',
+                        checked: true
+                    }
+                ]
+            }
+        ]
+    }
+
+});

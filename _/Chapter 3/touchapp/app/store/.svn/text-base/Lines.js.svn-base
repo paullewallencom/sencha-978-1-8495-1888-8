@@ -1,0 +1,20 @@
+Ext.define('verianMobile.store.Lines', {
+    extend: 'Ext.data.Store',
+    requires: [
+        'verianMobile.model.LineItem'
+    ],
+
+    config: {
+        autoLoad: true,
+        model: 'verianMobile.model.LineItem',
+        storeId: 'Lines',
+        proxy: {
+            type: 'ajax',
+            url: 'app/data/lines.json',
+            reader: {
+                type: 'json',
+                rootProperty: 'lines'
+            }
+        }
+    }
+});

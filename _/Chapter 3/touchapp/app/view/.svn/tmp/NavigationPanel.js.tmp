@@ -1,0 +1,225 @@
+Ext.define('verianMobile.view.NavigationPanel', {
+    extend: 'Ext.tab.Panel',
+    alias: 'widget.navigationtab',
+<<<<<<< .mine
+    requires: ['verianMobile.view.component.NestedList'],
+=======
+    id : 'navpan',
+>>>>>>> .r34
+    config: {
+//        layout: {
+//            animation: 'slide',
+//            type: 'card'
+//            	
+//        },
+        tabBar: {
+            docked: 'bottom',
+            scrollable: true,
+            layout: {
+                align: 'center',
+                pack: 'center',
+                type: 'hbox'
+            }
+        },
+        items: [
+            {
+                xtype: 'container',
+                layout: {
+                    type: 'fit'
+                },
+                title: 'Home',
+                iconCls: 'home',
+                items: [
+                    {
+                        xtype: 'container',
+                        docked: 'top',
+                        style: 'background-color:white',
+                        ui: '',
+                        layout: {
+                            align: 'center',
+                            type: 'hbox'
+                        },
+                        items: [
+                            {
+                                xtype: 'image',
+                                docked: 'left',
+                                height: 51,
+                                itemId: 'verianLogoPlaceHolder',
+                                width: 134,
+                                src: 'app/resources/images/verianLogo.jpg'
+                            },
+                            {
+                                xtype: 'image',
+                                docked: 'right',
+                                height: 51,
+                                itemId: 'customerLogoPlaceHolder',
+                                width: 186,
+                                src: 'app/resources/images/macys.jpg'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'vnestedlist',
+                        ui: 'round',
+                        itemTpl: [
+                            '<div>{itemCount} &nbsp;&nbsp; {description}</div>'
+                        ],
+                        store: 'Actions',
+                        onItemDisclosure: true,
+                        displayField: 'description'
+                    },
+                    {
+                        xtype: 'carousel',
+                        border: '10 10 10 10',
+                        cls: [
+                            ''
+                        ],
+                        docked: 'bottom',
+                        height: 100,
+                        style: 'background-color: silver;',
+                        ui: 'light',
+                        scrollable: true,
+                        items: [
+                            {
+                                xtype: 'container',
+                                html: 'Broad Cast Message one for all the world',
+                                styleHtmlContent: true
+                            },
+                            {
+                                xtype: 'container',
+                                border: '10 10 10 10',
+                                html: 'Second Message for all the world',
+                                styleHtmlContent: true
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                layout: {
+                    align: 'center',
+                    pack: 'center',
+                    type: 'vbox'
+                },
+                title: 'Apps',
+                iconCls: 'favorites',
+                items: [
+                    {
+                        xtype: 'container',
+                        docked: 'top',
+                        style: 'background-color:white',
+                        ui: '',
+                        layout: {
+                            align: 'center',
+                            type: 'hbox'
+                        },
+                        items: [
+                            {
+                                xtype: 'image',
+                                docked: 'left',
+                                height: 51,
+                                itemId: 'verianLogoPlaceHolder',
+                                width: 134,
+                                src: 'app/resources/images/verianLogo.jpg'
+                            },
+                            {
+                                xtype: 'image',
+                                docked: 'right',
+                                height: 51,
+                                itemId: 'customerLogoPlaceHolder',
+                                width: 186,
+                                src: 'app/resources/images/macys.jpg'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'button',
+                        id : 'btnApprovals',
+                        height: 50,
+                        ui: 'round',
+                        width: '90%',
+                        iconCls: 'approval',
+                        iconMask: true,
+<<<<<<< .mine
+                        text: 'Approvals',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('navigationtab');
+                        	ct.fireEvent('approvalstap', ct, btn, e, eOpts);
+                        }
+=======
+                        text: 'Approvals',
+                        scope: this.self,
+                        handler: function(cmp, e, eOpts) {
+                            	cmp.getParent().fireEvent('tap', cmp.getParent(), cmp, e, eOpts);
+                            }
+>>>>>>> .r34
+                    },
+                    {
+                        xtype: 'spacer',
+                        height: 10,
+                        ui: ''
+                    },
+                    {
+                        xtype: 'button',
+                        height: 50,
+                        ui: 'round',
+                        width: '90%',
+                        iconCls: 'doclist',
+                        iconMask: true,
+<<<<<<< .mine
+                        text: 'Expenses',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('navigationtab');
+                        	ct.fireEvent('expensestap', ct, btn, e, eOpts);
+                        }
+=======
+                        text: 'Expenses',
+                        scope: this.self,
+                        handler: function(cmp, e, eOpts) {
+                            	cmp.getParent().fireEvent('tap4', cmp.getParent(), cmp, e, eOpts);
+                            }
+                        
+>>>>>>> .r34
+                    },
+                    {
+                        xtype: 'spacer',
+                        height: 10,
+                        ui: ''
+                    },
+                    {
+                        xtype: 'button',
+                        height: 50,
+                        ui: 'round',
+                        width: '90%',
+                        iconCls: 'mail',
+                        iconMask: true,
+                        text: 'Messages',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('navigationtab');
+                        	ct.fireEvent('messagestap', ct, btn, e, eOpts);
+                        }
+                    }
+                ]
+            },
+            {
+                xtype: 'settingspanel',
+                title: 'Settings',
+                iconCls: 'settings'
+            },
+            {
+                xtype: 'panel',
+                title: 'Logout',
+                iconCls: 'logout'
+            }
+        ],
+        listeners: {
+        	activeitemchange: function(cmp, val, oldVal, eOpts) {
+        		if (val.initialConfig.title === 'Logout') {	//Logout
+        			cmp.fireEvent('logouttap', cmp);
+        		}
+        	}
+        }
+    }
+
+});

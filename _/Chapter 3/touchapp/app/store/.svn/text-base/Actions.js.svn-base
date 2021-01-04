@@ -1,0 +1,24 @@
+Ext.define('verianMobile.store.Actions', {
+    extend: 'Ext.data.TreeStore',
+    requires: [
+        'verianMobile.model.HomeList'
+    ],
+
+    config: {
+        autoLoad: true,
+        model: 'verianMobile.model.HomeList',
+        storeId: 'Actions',
+        defaultRootProperty: 'items',
+        proxy: {
+            type: 'ajax',
+            url: 'app/data/actions.json',
+            reader: {
+                type: 'json',
+                defaultRootProperty: 'items'
+            }
+        },
+        sorters: {
+            property: 'lastName'
+        }
+    }
+});

@@ -1,0 +1,18 @@
+{
+    "total": 1,
+    "settings": [
+        {
+            "name": "Sort Options",
+            "items": [{
+            	"name": "Requisitions",
+            	"items": []
+            }, {
+            	"name": "Expense Reports",
+            	"items": []
+            }, {
+            	"name": "Invoices",
+            	"items": []
+            }]
+        }
+    ]
+}

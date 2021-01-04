@@ -1,0 +1,86 @@
+/**
+ * @author Ajit Kumar (ajit.kumar@walkingtree.in)
+ */
+Ext.define('verianMobile.view.LoginForm', {
+    extend: 'Ext.form.Panel',
+    alias: 'widget.loginform',
+    	
+    config: {
+        ui: 'light',
+        layout: {
+            type: 'vbox'
+             
+        },
+        items: [
+            {
+                xtype: 'container',
+                ui: '',
+                layout: {
+                    align: 'center',
+                    type: 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'image',
+                        docked: 'top',
+                        height: 100,
+                        id: 'mainVerianLogo',
+                        style: 'background-color:white',
+                        ui: 'light',
+                        src: 'app/resources/images/headerbackground.jpg'
+                    }
+                ]
+            },
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'verian mobile'
+            },
+            {
+                xtype: 'fieldset',
+                title: 'Login',
+                items: [
+                    {
+                        xtype: 'textfield',
+                        label: 'User Id',
+                        placeHolder: 'Enter User Id',
+                        labelWidth: '50%',
+                        required: true
+                    },
+                    {
+                        xtype: 'passwordfield',
+                        label: 'Password',
+                        placeHolder: 'Enter your password',
+                        name: 'password',
+                        labelWidth: '50%',
+                        required: true
+                    },
+                    {
+                        xtype: 'textfield',
+                        labelWidth: '50%',
+                        label: 'Server'
+                    }
+                ]
+            },
+            {
+                xtype: 'togglefield',
+                labelWidth: '70%',
+                label: 'Remember'
+            },
+            {
+                xtype: 'button',
+                margin: 10,
+                ui: 'round',
+                text: 'Log On',
+                scope: this.self,
+                handler: function(cmp, e, eOpts) {
+                	cmp.getParent().fireEvent('logintap', cmp.getParent(), cmp, e, eOpts);
+                }
+            }
+        ]
+    },
+    resetView: function() {
+    	this.reset();
+    }
+
+});

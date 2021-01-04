@@ -1,0 +1,70 @@
+Ext.define('verianMobile.view.ItemLineDetailPanel', {
+    extend: 'Ext.Container',
+    alias: 'widget.itemlinedetailpanel',
+
+    config: {
+        ui: 'dark',
+        layout: {
+            type: 'vbox'
+        },
+        items: [
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Req# 1391',
+                items: [
+                    {
+                        xtype: 'button',
+                        ui: 'back',
+                        text: 'Back',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('itemlinedetailpanel');
+                        	ct.fireEvent('backtap', ct, btn, e, eOpts);
+                        }
+                    }
+                ]
+            },
+            {
+                xtype: 'fieldset',
+                items: [
+                    {
+                        xtype: 'list',
+                        height: 260,
+                        ui: 'round',
+                        store: 'LineDetails',
+                        itemTpl: [
+							'<div class="item">',
+								'<div class="icon" style="background:url({thumb}) no-repeat 0 0;"></div>',
+								'<div class="meta"></div><div class="title ">{item}</div>',
+								'<div class="class">{description}</div>',
+							'</div>'
+                        ]
+                    }
+                ]
+            },
+            {
+                xtype: 'button',
+                docked: 'bottom',
+                margin: 10,
+                ui: 'decline-round',
+                text: 'Deny',
+                handler: function(btn, e, eOpts) {
+                	var ct = btn.up('itemlinedetailpanel');
+                	ct.fireEvent('deny', ct, btn, e, eOpts);
+                }
+            },
+            {
+                xtype: 'button',
+                docked: 'bottom',
+                margin: 10,
+                ui: 'confirm-round',
+                text: 'Approve',
+                handler: function(btn, e, eOpts) {
+                	var ct = btn.up('itemlinedetailpanel');
+                	ct.fireEvent('approve', ct, btn, e, eOpts);
+                }
+            }
+        ]
+    }
+
+});

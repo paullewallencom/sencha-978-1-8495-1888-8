@@ -1,0 +1,134 @@
+Ext.define('verianMobile.view.ItemDetailPanel', {
+    extend: 'Ext.Container',
+    alias: 'widget.itemdetailpanel',
+    requires: ['verianMobile.view.component.List'],
+
+    config: {
+        ui: 'dark',
+        layout: {
+            type: 'vbox'
+        },
+        items: [
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Req# 1391',
+                items: [
+                    {
+                        xtype: 'button',
+                        ui: 'back',
+                        text: 'Back',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('itemdetailpanel');
+                        	ct.fireEvent('backtap', ct, btn, e, eOpts);
+                        }
+                    }
+                ]
+            },
+            {
+                xtype: 'list',
+                flex: 1,
+                ui: 'round',
+                store: 'SummaryItems',
+                itemTpl: [
+						'<div class="closeitem">',
+						'<div class="smallicon add-icon"></div>',
+						'<div class="meta"></div><div class="title ">{field}</div>',
+						'<div class="class">{text}</div>',
+					'</div>'
+                ],
+                scope: this,
+                listeners: {
+                	itemtap: function(view, index, t, model, e, eOpts) {
+                    	var ct = view.up('itemdetailpanel');
+                    	var el = e.getTarget('.add-icon');
+                    	if (!Ext.isEmpty(el)) {	//expand is clicked
+                    		
+                    		var parent = e.getTarget('.x-list-item');
+                    		
+                    		var extEl = Ext.get(el);
+                    		extEl.replaceCls('add-icon', 'cancel-icon');
+                    		
+                    		var list = Ext.create('verianMobile.view.component.List', {
+                    			height: 290,
+                    			renderTo: parent.id,
+                                ui: 'round',
+                                store: 'Lines',
+                                itemTpl: [
+									'<div class="item">',
+										'<div class="icon" style="background:url({partThumb}) no-repeat 0 0;"></div>',
+										'<div ></div><div class="price1">{item}</div>',
+										'<div class="price">{unitPrice},{qty},{uom}</div>',
+										'<div class="price">{location}</div>',
+										'<div class="monitor">',
+										'<div class="x-container x-toggle x-toggle-{approved}" style="float:right;"><div class="x-inner x-toggle-inner"><div id="ext-thumb-1" class="x-thumb x-draggable" style="-webkit-transform: translate3d(38px, 0px, 0px); "><div class="x-size-change-detector x-size-change-detector-expand"><div></div></div><div class="x-size-change-detector x-size-change-detector-shrink"><div></div></div></div><div class="x-size-change-detector x-size-change-detector-expand"><div></div></div><div class="x-size-change-detector x-size-change-detector-shrink"><div></div></div></div><div class="x-size-change-detector x-size-change-detector-expand"><div></div></div><div class="x-size-change-detector x-size-change-detector-shrink"><div></div></div></div>',
+										'</div>',
+										'<div class="lastdiv">',
+										'<div class="x-list-disclosure" class="lastdiv"></div>',
+										'</div>',
+									'</div>'
+                                ],
+                                listeners: {
+                                	itemtap: function(ct, newItem, oldItem, eOpts) {
+                                		//show the line detail
+                                		var pnl = view.up('itemdetailpanel');
+                                		pnl.fireEvent('showlinedetail', pnl, model);
+                                    }
+                                }
+                                
+                    		});
+                    		list.show();
+                    		
+                    		if (Ext.isEmpty(this.lists))
+                    			this.lists = [];
+                    		
+                    		this.lists[index] = list;
+                    	} else {
+                    		el = e.getTarget('.cancel-icon');
+                    		if (!Ext.isEmpty(el)) {	//collapse is clicked
+                    			var extEl = Ext.get(el);
+                        		extEl.replaceCls('cancel-icon', 'add-icon');
+                        		this.lists[index].destroy();
+                    		} 
+                    	}
+                    		
+                    }
+                }
+            },
+            {
+                xtype: 'button',
+                docked: 'bottom',
+                margin: 10,
+                ui: 'confirm-round',
+                text: 'Finish Approval/Denial',
+                handler: function(btn, e, eOpts) {
+                	var ct = btn.up('itemdetailpanel');
+                	ct.fireEvent('finish', ct, btn, e, eOpts);
+                }
+            },
+            {
+                xtype: 'fieldset',
+                margin: 10,
+                title: 'Message',
+                items: [
+                    {
+                        xtype: 'textareafield',
+                        height: 54,
+                        labelAlign: 'top'
+                    },
+                    {
+                        xtype: 'button',
+                        docked: 'bottom',
+                        height: 10,
+                        text: 'Send Message',
+                        handler: function(btn, e, eOpts) {
+                        	var ct = btn.up('itemdetailpanel');
+                        	ct.fireEvent('sendmessage', ct, btn, e, eOpts);
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
+});

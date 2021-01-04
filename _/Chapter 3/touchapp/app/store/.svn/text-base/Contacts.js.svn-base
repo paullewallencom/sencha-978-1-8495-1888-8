@@ -1,0 +1,23 @@
+Ext.define('verianMobile.store.Contacts', {
+    extend: 'Ext.data.Store',
+    requires: [
+        'verianMobile.model.Contact'
+    ],
+
+    config: {
+        autoLoad: true,
+        model: 'verianMobile.model.Contact',
+        storeId: 'contacts',
+        proxy: {
+            type: 'ajax',
+            url: 'app/data/contacts.json',
+            reader: {
+                type: 'json',
+                rootProperty: 'contacts'
+            }
+        },
+        sorters: {
+            property: 'lastName'
+        }
+    }
+});

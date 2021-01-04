@@ -1,0 +1,210 @@
+/**
+ * @author Ajit Kumar (ajit.kumar@walkingtree.in)
+ */
+Ext.define('verianMobile.controller.Main', {
+    extend: 'Ext.app.Controller',
+    useLoadMask: true,
+    config: {
+<<<<<<< .mine
+    	
+        control: {
+=======
+    	 
+       control: {
+		'loginForm': {
+				login: 'doLogin'
+			},
+			navapplist:{
+				tap:'onApprovalsButtonTap'
+			},
+			
+>>>>>>> .r34
+<<<<<<< .mine
+			'loginform': {
+				logintap: 'doLogin'
+=======
+			'approvalspanel' : {
+				tap1 : 'OnFilterTap',
+				tap2 : 'OnreqTap'
+>>>>>>> .r34
+			},
+<<<<<<< .mine
+			'navigationtab' : {
+				logouttap: 'doLogout',
+				messagestap: 'doDummy',
+				expensestap: 'onExpensesTap',
+				approvalstap: 'onApprovalsTap',
+			},
+			'approvalspanel': {
+				filtertap: 'onFilterTap',
+				backtap: 'onBackTap',
+				showdetail: 'showDocumentDetail'
+			},
+			'filterpanel': {
+				backtap: 'onBackTap'
+			},
+			'expenseform': {
+				backtap: 'onBackTap',
+				createexpense: 'doDummy'
+			},
+			'itemdetailpanel': {
+				backtap: 'onBackTap',
+				showdetail: 'showDocumentDetail',
+				showlinedetail: 'showDocumentLineDetail',
+				sendmessage: 'doDummy',
+				finish: 'doDummy'
+			},
+			'itemlinedetailpanel' : {
+				backtap: 'onBackTap',
+				approve: 'doDummy',
+				deny: 'doDummy'
+			},
+			'settingspanel': {
+				setdefault: 'doDummy'
+=======
+			'reqdetailpanel' : {
+				tap3 : 'OnreqFinalTap'
+			},
+			navExpenselist:{
+				tap4:'OnExpensesButtonTap'
+			},
+			'settingspanel' : {
+				tap5 : 'OnSortTap'
+>>>>>>> .r34
+			}
+			
+			
+
+        },
+        refs :{
+<<<<<<< .mine
+        	loginForm: 'loginform',
+        	navigationPanel: 'navigationtab',
+        	appContainer: 'panel[name=appcontainer]',
+        	expensePanel: 'expenseform',
+        	approvalsPanel: 'approvalspanel',
+        	filterPanel: 'filterpanel',
+        	itemDetailPanel: 'itemdetailpanel',
+        	itemLineDetailPanel: 'itemlinedetailpanel'
+        }
+        		
+=======
+         	loginForm: 'loginform',
+         	navigationPanel: 'navigationtab',
+         	navapplist:'navigationtab > container[title=Apps]',
+         	navExpenselist:'navigationtab > container[title=Apps]',
+         	AppPanel : 'approvalspanel > titlebar[title=Approvals]',
+           	appContainer: 'panel[name=appcontainer]'
+         }
+                		
+>>>>>>> .r34
+    },
+    doDummy: function(pnl, cmp, e, options) {
+    	Ext.Msg.alert('INFO', 'Operation successful!');
+    },
+    onExpensesTap: function(pnl, cmp, e, options) {
+    	var pnl = this.getExpensePanel();
+    	if (Ext.isEmpty(pnl)) {
+    		pnl = Ext.create('verianMobile.view.ExpensePanel', {});
+    		this.getAppContainer().add(pnl);
+    	}
+    	this.getAppContainer().setActiveItem(pnl);
+    },
+    onApprovalsTap: function(pnl, cmp, e, options) {
+    	var pnl = this.getApprovalsPanel();
+    	if (Ext.isEmpty(pnl)) {
+    		pnl = Ext.create('verianMobile.view.ApprovalsPanel', {});
+    		this.getAppContainer().add(pnl);
+    	}
+    	this.getAppContainer().setActiveItem(pnl);
+    },
+    onFilterTap: function(pnl, cmp, e, options) {
+    	var pnl = this.getFilterPanel();
+    	if (Ext.isEmpty(pnl)) {
+    		pnl = Ext.create('verianMobile.view.FilterPanel', {});
+    		this.getAppContainer().add(pnl);
+    	}
+    	this.getAppContainer().setActiveItem(pnl);
+    },
+    onBackTap: function(fromCmp) {
+    	if (fromCmp instanceof verianMobile.view.FilterPanel) {
+    		this.getAppContainer().setActiveItem(this.getApprovalsPanel());
+    	}
+    	if (fromCmp instanceof verianMobile.view.ApprovalsPanel) {
+    		this.getAppContainer().setActiveItem(this.getNavigationPanel());
+    	}
+    	if (fromCmp instanceof verianMobile.view.ExpensePanel) {
+    		this.getAppContainer().setActiveItem(this.getNavigationPanel());
+    	}
+    	if (fromCmp instanceof verianMobile.view.ItemDetailPanel) {
+    		this.getAppContainer().setActiveItem(this.getApprovalsPanel());
+    	}
+    	if (fromCmp instanceof verianMobile.view.ItemLineDetailPanel) {
+    		this.getAppContainer().setActiveItem(this.getItemDetailPanel());
+    	}
+    },
+    showDocumentDetail: function(ct, view, index, t, model, e, eOpts) {
+    	var pnl = this.getItemDetailPanel();
+    	if (Ext.isEmpty(pnl)) {
+    		pnl = Ext.create('verianMobile.view.ItemDetailPanel', {});
+    		this.getAppContainer().add(pnl);
+    	}
+    	this.getAppContainer().setActiveItem(pnl);
+    },
+    showDocumentLineDetail: function(cmp, model) {
+    	var pnl = this.getItemLineDetailPanel();
+    	if (Ext.isEmpty(pnl)) {
+    		pnl = Ext.create('verianMobile.view.ItemLineDetailPanel', {});
+    		this.getAppContainer().add(pnl);
+    	}
+    	this.getAppContainer().setActiveItem(pnl);
+    },
+    doLogin: function(pnl, cmp, e, options) {
+    	var pnl = this.getNavigationPanel();
+    	if (Ext.isEmpty(pnl)) {
+    		pnl = Ext.create('verianMobile.view.NavigationPanel', {});
+    		this.getAppContainer().add(pnl);
+    	}
+    	
+    	this.getAppContainer().setActiveItem(pnl);
+    	pnl.setActiveItem(0);
+    },
+<<<<<<< .mine
+    doLogout: function(pnl) {
+    	var loginForm = this.getLoginForm();
+    	this.getAppContainer().setActiveItem(loginForm);
+=======
+    onApprovalsButtonTap :function(){
+    	var approvalPanel = Ext.create('verianMobile.view.ApprovalsPanel', {});
+    	this.getAppContainer().add(approvalPanel);
+    	this.getAppContainer().setActiveItem(approvalPanel);
+    },
+    OnFilterTap : function(){
+    	var filterPanel = Ext.create('verianMobile.view.FilterPanel', {});
+    	this.getAppContainer().add(filterPanel);
+    	this.getAppContainer().setActiveItem(filterPanel);
+    	
+    },
+    OnreqTap : function(){
+    	var ReqDetailPanel = Ext.create('verianMobile.view.RequisitionDetailPanel', {});
+    	this.getAppContainer().add(ReqDetailPanel);
+    	this.getAppContainer().setActiveItem(ReqDetailPanel);
+    },
+    OnreqFinalTap : function(){
+    	var ReqDetailFinalPanel = Ext.create('verianMobile.view.RequisitionDetailPanelFinal', {});
+    	this.getAppContainer().add(ReqDetailFinalPanel);
+    	this.getAppContainer().setActiveItem(ReqDetailFinalPanel);
+    },
+    OnExpensesButtonTap : function (){
+    	var ExpensesPanel = Ext.create('verianMobile.view.ExpensePanel', {});
+    	this.getAppContainer().add(ExpensesPanel);
+    	this.getAppContainer().setActiveItem(ExpensesPanel);
+    },
+    OnSortTap : function(){
+    	var SortPanel = Ext.create('verianMobile.view.SortOptionsPanel', {});
+		this.getAppContainer().add(SortPanel);
+		this.getAppContainer().setActiveItem(SortPanel);
+>>>>>>> .r34
+    }
+  
+});

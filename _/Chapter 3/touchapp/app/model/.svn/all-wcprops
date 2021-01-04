@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/verian/!svn/ver/35/trunk/VerianMobile/WebContent/app/model
+END
+LineItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/verian/!svn/ver/35/trunk/VerianMobile/WebContent/app/model/LineItem.js
+END
+LineDetailItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/verian/!svn/ver/35/trunk/VerianMobile/WebContent/app/model/LineDetailItem.js
+END
+ExpenseType.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/verian/!svn/ver/36/trunk/VerianMobile/WebContent/app/model/ExpenseType.js
+END
+SettingsInfo.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/verian/!svn/ver/35/trunk/VerianMobile/WebContent/app/model/SettingsInfo.js
+END
+SummaryItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/verian/!svn/ver/35/trunk/VerianMobile/WebContent/app/model/SummaryItem.js
+END
+ApprovalItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/verian/!svn/ver/35/trunk/VerianMobile/WebContent/app/model/ApprovalItem.js
+END

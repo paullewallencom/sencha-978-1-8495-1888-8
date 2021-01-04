@@ -1,0 +1,85 @@
+Ext.define('verianMobile.view.ExpensePanel', {
+    extend: 'Ext.form.Panel',
+    alias: 'widget.expenseform',
+
+    config: {
+        ui: 'light',
+        layout: {
+            type: 'vbox'
+        },
+        items: [
+            {
+                xtype: 'button',
+                iconCls: 'camera',
+                iconMask: true,
+                text: 'Capture Receipt Image'
+            },
+            {
+                xtype: 'container',
+                height: '1.3em',
+                ui: '',
+                layout: {
+                    align: 'center',
+                    type: 'hbox'
+                }
+            },
+            {
+                xtype: 'titlebar',
+                docked: 'top',
+                title: 'Expense Report',
+                items: [
+                        {
+                            xtype: 'button',
+                            ui: 'back',
+                            text: 'Back',
+                            handler: function(btn, e, eOpts) {
+                            	var ct = btn.up('expenseform');
+                            	ct.fireEvent('backtap', ct, btn, e, eOpts);
+                            }
+                        }
+                    ]
+            },
+            {
+                xtype: 'fieldset',
+                items: [
+                    {
+                        xtype: 'datepickerfield',
+                        label: 'Expense Date',
+                        labelWidth: '50%',
+                        placeHolder: 'mm/dd/yyyy'
+                    },
+                    {
+                        xtype: 'selectfield',
+                        label: 'Expense Type',
+                        labelWidth: '50%',
+                        store : 'ExpensesDetails',
+                        displayField: 'ExpensesName',
+						valueField: 'ExpensesID'
+                    },
+                    {
+                        xtype: 'numberfield',
+                        label: 'Expense Amount',
+                        labelWidth: '60%'
+                    },
+                    {
+                        xtype: 'textareafield',
+                        label: 'Purpose',
+                        labelAlign: 'top'
+                    }
+                ]
+            },
+            {
+                xtype: 'button',
+                docked: 'bottom',
+                margin: 10,
+                ui: 'confirm-round',
+                text: 'Create Expense Report',
+                handler: function(btn, e, eOpts) {
+                	var ct = btn.up('expenseform');
+                	ct.fireEvent('createexpense', ct, btn, e, eOpts);
+                }
+            }
+        ]
+    }
+
+});

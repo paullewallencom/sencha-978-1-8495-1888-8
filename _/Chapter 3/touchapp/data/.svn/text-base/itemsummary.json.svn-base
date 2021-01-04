@@ -1,0 +1,15 @@
+{
+    "summaryitems" : [{
+    	"field": "Header",
+    	"text": "Laura, Atlanta"
+    }, {
+    	"field": "Lines",
+    	"text": "3 Lines, $10000.00, Approved 2 of 3"
+    }, {
+    	"field": "Approvers",
+    	"text": "2 of 3"
+    }, {
+    	"field": "Attachments",
+    	"text": "3 attachments"
+    }]
+}

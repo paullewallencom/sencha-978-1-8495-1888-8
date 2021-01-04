@@ -1,0 +1,13 @@
+Ext.define('verianMobile.model.HomeList', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: [
+            {
+                name: 'itemCount'
+            },
+            {
+                name: 'description'
+            }
+        ]
+    }
+});

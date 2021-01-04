@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+Ext.define('verianMobile.store.ExpenseTypes', {
+    extend: 'Ext.data.Store',
+    requires: [
+        'verianMobile.model.ExpenseType'
+    ],
+
+    config: {
+        autoLoad: true,
+        model: 'verianMobile.model.ExpenseType',
+        storeId: 'ExpenseTypes',
+        proxy: {
+            type: 'ajax',
+            url: 'app/data/expensetypes.json',
+            reader: {
+                type: 'json',
+                rootProperty: 'expenses'
+            }
+
+        }
+    }
+});
